@@ -66,11 +66,14 @@
 </template>
 
 <script>
-import { updateUser } from "@/api/user";
+import { updateUser, getCurrentUser } from "@/api/user";
 
 export default {
   middleware: "authenticated",
   name: "SettingsIndex",
+  async asyncData() {
+    return getCurrentUser();
+  },
   data() {
     return {
       user: {

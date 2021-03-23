@@ -80,7 +80,7 @@ export default {
   },
   methods: {
     exit() {
-      console.log(1);
+     
       this.$store.commit("delUser");
       Cookie.remove("user");
       this.$router.push('/login')
