@@ -72,7 +72,10 @@ export default {
   middleware: "authenticated",
   name: "SettingsIndex",
   async asyncData() {
-    return getCurrentUser();
+    const user = await getCurrentUser().then((res) => {
+      return res.data;
+    });
+    return user;
   },
   data() {
     return {

@@ -91,11 +91,17 @@
                 <i class="ion-heart"></i> {{ item.favoritesCount }}
               </button>
             </div>
-            <a href="" class="preview-link">
+            <nuxt-link
+              class="preview-link"
+              :to="{
+                name: 'article',
+                params: { slug: item.slug },
+              }"
+            >
               <h1>{{ item.title }}</h1>
               <p>{{ item.description }}</p>
               <span>Read more...</span>
-            </a>
+            </nuxt-link>
           </div>
         </div>
       </div>

@@ -56,10 +56,28 @@ export const getComments = slug => {
 
 
 // 创建新的文章
-export const createArticle= data => {
+export const createArticle = data => {
   return request({
     method: 'post',
     url: `/api/articles`,
     data
+  })
+}
+
+// 更新文章
+export const updateArticle = data => {
+  console.log(data)
+  return request({
+    method: 'PUT',
+    url: `/api/articles/${data.article.slug}`,
+    data
+  })
+}
+
+export const delArticle = slug => {
+  return request({
+    method: 'DELETE',
+    url: `/api/articles/${slug}`
+
   })
 }
