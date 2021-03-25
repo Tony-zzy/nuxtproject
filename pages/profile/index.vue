@@ -101,6 +101,15 @@
               <h1>{{ item.title }}</h1>
               <p>{{ item.description }}</p>
               <span>Read more...</span>
+              <ul class="tag-list">
+                <li
+                  class="tag-default tag-pill tag-outline"
+                  v-for="tag in item.tagList"
+                  :key="tag"
+                >
+                  {{ tag }}
+                </li>
+              </ul>
             </nuxt-link>
           </div>
         </div>
